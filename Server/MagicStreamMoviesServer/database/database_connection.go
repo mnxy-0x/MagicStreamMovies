@@ -31,7 +31,8 @@ func Connect() *mongo.Client {
 	return client
 }
 
-var Client *mongo.Client = Connect()
+var Client *mongo.Client = Connect()	
+// i changed this to internal_fn_var inside (OpenCollection), but cancelled it later; cz it will executed with every connection operation!
 
 func OpenCollection(collectionName string) *mongo.Collection {
 	err := godotenv.Load(".env")

@@ -18,6 +18,8 @@ func main() {
 		// (imdb_id) should be the same name extracted by c.Param("imdb_id") in the handler [GetOneMovie()]
 
 	router.POST("/addmovie", controller.AddMovie())
+	router.POST("/register", controller.RegisterUser())
+	router.POST("/login", controller.LoginUser())
 
 	// every request handled by unique go_routine under-the-hood by (router.Run)
 	if err := router.Run(":4000"); err != nil {
